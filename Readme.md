@@ -15,9 +15,9 @@ Para o Linux:
 
 ## Trabalhos
 
-- [T2 - LinkedList](LINK)
-- [T3 - BinaryTree and AVL](LINK)
-- [T4 - Hash Table](LINK)
-- [T5 - Dijkstra's Algorithm](LINK)
+- [T2 - Lista Encadeada](https://github.com/brunoantonelli/estrutura_de_dados/tree/master/Trabalhos/T2)
+- [T3 - Árvore Binaria e Árvore](https://github.com/brunoantonelli/estrutura_de_dados/tree/master/Trabalhos/T3)
+- [T4 - Tabela de Espalhamento](LINK)
+- [T5 - Algoritmo de Dijkstra](LINK)
 
 <br>
