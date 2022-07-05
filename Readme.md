@@ -9,9 +9,7 @@ Repositório destinado para a matéria de Estrutura de dados.
 *Cuidado com o plágio*
 
 Para o Linux:
-- Compile: *g++ main.cpp -o exe -g -lgtest -std=c++17 -lpthread*
-- Run: *./exe*
-- Check for leaks: *valgrind --leak-check=full ./exe*
+- Compilar: *g++ main.cpp -o exe -g -lgtest -std=c++17 -lpthread*
 
 <br>
 
