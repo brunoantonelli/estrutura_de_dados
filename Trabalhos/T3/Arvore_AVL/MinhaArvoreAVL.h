@@ -13,24 +13,25 @@ class MinhaArvoreAVL final : public MinhaArvoreDeBuscaBinaria<T>
 {
     private:
     
-    int fator_b(Nodo<T> *chave) const 
+    int getRotacao(Nodo<T> *chave) const 
     {
-        int Fb = 0, He = 0, Hd = 0;
+        int aux = 0, esquerda = 0, direita = 0;
 
         if (chave != nullptr)
-        {
-            if (chave->filhoEsquerda != nullptr)
-            {
-                He = this->alturaSubArvore(chave->filhoEsquerda) + 1;
-            }
-            if (chave->filhoDireita != nullptr)
-            {
-                Hd = this->alturaSubArvore(chave->filhoDireita) + 1;
-            }
+         {
+              if (chave->filhoEsquerda != nullptr)
+                 {
+                    esquerda = chave->filhoEsquerda->altura;
+                esquerda = this->alturaSubArvore(chave->filhoEsquerda) + 1;
+                 }
+              if (chave->filhoDireita != nullptr)
+                 {
+                direita = this->alturaSubArvore(chave->filhoDireita) + 1;
+                 }
 
-            Fb = He - Hd;
+            aux = esquerda - direita;
 
-            return Fb;
+            return aux;
         }
         return 0;
     }
@@ -39,13 +40,13 @@ class MinhaArvoreAVL final : public MinhaArvoreDeBuscaBinaria<T>
     {
         if (pai != nullptr)
         {
-            int Fb = this->fator_b(pai);
+            int aux = this->getRotacao(pai);
 
             // Rotação Simples a Esquerda
-            if (Fb < -1)
+            if (aux < -1)
             {
-                Fb = this->fator_b(pai->filhoDireita);
-                if (Fb <= 0)
+                aux = this->getRotacao(pai->filhoDireita);
+                if (aux <= 0)
                 {
                     Nodo<T> *avo = this->getPai(pai->chave, this->_raiz);
 
@@ -78,10 +79,10 @@ class MinhaArvoreAVL final : public MinhaArvoreDeBuscaBinaria<T>
             }
 
             // Rotação Simples a Direita
-            if (Fb > 1)
+            if (aux > 1)
             {
-                Fb = this->fator_b(pai->filhoEsquerda);
-                if (Fb >= 0)
+                aux = this->getRotacao(pai->filhoEsquerda);
+                if (aux >= 0)
                 {
                     Nodo<T> *avo = this->getPai(pai->chave, this->_raiz);
 
